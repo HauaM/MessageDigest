@@ -1,0 +1,27 @@
+package Test;
+
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+public class Sample {
+	//converting string to MD5 in java
+	//main method
+	public static void main(String[] args) {
+		//create a string
+		String name = "ghost";
+		//use Message Digest class to do the convertion
+		//create a Message Digest object
+		try {
+			MessageDigest md = MessageDigest.getInstance("MD5");
+			//update the md object
+			md.update(name.getBytes(),0,name.length());
+			
+			System.out.println(new BigInteger(1,md.digest()).toString(16));
+		}catch(NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

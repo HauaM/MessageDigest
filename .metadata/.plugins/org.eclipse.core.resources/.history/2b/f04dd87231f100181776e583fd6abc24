@@ -1,0 +1,24 @@
+package SimpleMD;
+
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.security.DigestInputStream;
+import java.security.MessageDigest;
+  
+import com.Ostermiller.util.Base64;
+  
+public class DigestStreamExample {
+  
+       public static void main(String[] args) throws Exception{
+             MessageDigest md = MessageDigest.getInstance("MD5");
+             BufferedInputStream in = new BufferedInputStream(new FileInputStream("c:\\test.txt"));
+             
+             //DigestInputStream을 생성한다.
+             DigestInputStream digestIn = new DigestInputStream(in, md);
+             // 모든 데이터를 읽어들인다.
+             while(digestIn.read() != -1);
+             byte[] theDigest = md.digest();
+             
+             System.out.println(Base64.encode(theDigest));
+       }
+}

@@ -1,0 +1,22 @@
+//package Test;
+//
+//import java.math.BigInteger;
+//import java.security.MessageDigest;
+//import java.security.NoSuchAlgorithmException;
+//
+//public class Sample {
+//	public static void main(String[] args) {
+//		String name = "ghost";
+//		
+//		try {
+//			MessageDigest md = MessageDigest.getInstance("MD5");
+//			
+//			md.update(name.getBytes(),1,name.length());
+//			
+//			System.out.println(new BigInteger(1,md.digest()).toString(16));
+//		}catch(NoSuchAlgorithmException e) {
+//			
+//		}
+//	}
+//
+//}
